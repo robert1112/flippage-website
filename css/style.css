@@ -348,7 +348,7 @@ a {
     background-color: var(--white);
     border: 1px solid #E8E3DD;
     border-radius: 16px;
-    width: 360px;
+    width: 340px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
