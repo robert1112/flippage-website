@@ -480,10 +480,48 @@ a {
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.platform-btn:hover {
+.platform-btn:hover:not(.disabled) {
     transform: translateY(-2px);
     border-color: var(--rust);
     box-shadow: 0 4px 12px rgba(212, 132, 90, 0.1);
+}
+
+/* Spotify Specific Styling */
+.spotify-active {
+    background-color: #1DB954; /* Spotify Brand Green */
+    color: var(--white);
+    border-color: #1DB954;
+}
+
+.spotify-active:hover {
+    background-color: #1ed760;
+    border-color: #1ed760;
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+}
+
+.spotify-logo-img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* Text is white, so icon should be white */
+}
+
+/* Disabled Platform Styling */
+.platform-btn.disabled {
+    background-color: var(--white);
+    color: #CCCCCC;
+    border-color: #EEEEEE;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.platform-btn.disabled .material-symbols-rounded {
+    color: #CCCCCC;
+}
+
+.platform-btn.disabled small {
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 4px;
 }
 
 .logo-apple {
