@@ -391,6 +391,20 @@ a {
     font-size: 22px;
     font-weight: 700;
     color: var(--dark-brown);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chapter-count {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    background-color: var(--cream);
+    color: var(--rust);
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 132, 90, 0.3);
 }
 
 .card-eng {
@@ -402,9 +416,11 @@ a {
 
 .card-desc {
     font-family: var(--font-sans);
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.6;
     color: var(--gray-text);
-    line-height: 1.8;
+    margin-bottom: 8px;
+    flex-grow: 1; /* Pushes the button to the bottom so all cards align */
 }
 
 .card-btn {
