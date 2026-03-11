@@ -175,17 +175,17 @@ a {
 
 .hero-image {
     flex: 1;
-    max-width: 480px;
-    height: 480px;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(61, 43, 31, 0.08);
+    max-width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
@@ -264,6 +264,7 @@ a {
     justify-content: center;
     gap: 48px;
     width: 100%;
+    max-width: 800px; /* Forces 2x2 grid layout on desktop */
     flex-wrap: wrap;
 }
 
@@ -348,7 +349,7 @@ a {
     background-color: var(--white);
     border: 1px solid #E8E3DD;
     border-radius: 16px;
-    width: 360px;
+    width: 340px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -390,6 +391,20 @@ a {
     font-size: 22px;
     font-weight: 700;
     color: var(--dark-brown);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chapter-count {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    background-color: var(--cream);
+    color: var(--rust);
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 132, 90, 0.3);
 }
 
 .card-eng {
@@ -401,9 +416,11 @@ a {
 
 .card-desc {
     font-family: var(--font-sans);
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.6;
     color: var(--gray-text);
-    line-height: 1.8;
+    margin-bottom: 8px;
+    flex-grow: 1; /* Pushes the button to the bottom so all cards align */
 }
 
 .card-btn {
@@ -480,10 +497,48 @@ a {
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.platform-btn:hover {
+.platform-btn:hover:not(.disabled) {
     transform: translateY(-2px);
     border-color: var(--rust);
     box-shadow: 0 4px 12px rgba(212, 132, 90, 0.1);
+}
+
+/* Spotify Specific Styling */
+.spotify-active {
+    background-color: #1DB954; /* Spotify Brand Green */
+    color: var(--white);
+    border-color: #1DB954;
+}
+
+.spotify-active:hover {
+    background-color: #1ed760;
+    border-color: #1ed760;
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+}
+
+.spotify-logo-img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* Text is white, so icon should be white */
+}
+
+/* Disabled Platform Styling */
+.platform-btn.disabled {
+    background-color: var(--white);
+    color: #CCCCCC;
+    border-color: #EEEEEE;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.platform-btn.disabled .material-symbols-rounded {
+    color: #CCCCCC;
+}
+
+.platform-btn.disabled small {
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 4px;
 }
 
 .logo-apple {
@@ -529,6 +584,49 @@ a {
     font-family: var(--font-sans);
     font-size: 16px;
     color: var(--gray-text);
+    margin-bottom: 24px;
+}
+
+.sub-benefits-container {
+    text-align: left;
+    max-width: 480px;
+    margin: 0 auto 32px auto;
+}
+
+.sub-benefits {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sub-benefits li {
+    font-size: 16px;
+    color: var(--gray-text);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+}
+
+.sub-benefits li strong {
+    color: var(--cream);
+}
+
+.check-icon {
+    color: var(--forest-green);
+    font-weight: bold;
+    font-size: 16px;
+    background: #E8F3EB;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: -2px;
 }
 
 .sub-form {
