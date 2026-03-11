@@ -197,9 +197,9 @@
                         <li><span class="check-icon">✓</span> <strong>最新活動企劃</strong>：掌握實體沙龍或新企劃消息</li>
                     </ul>
                 </div>
-                <form class="sub-form" action="#" method="POST" onsubmit="event.preventDefault();">
-                    <input type="email" placeholder="輸入你的 Email" required>
-                    <button type="submit">訂閱</button>
+                <form id="keform" class="sub-form new_form_submission" accept-charset="UTF-8" method="POST" action="https://aplikasi.kirim.email/form/yi-ye-zhi-jian-dian-zi-bao-ding-yue-FtE93ze7">
+                    <input name="email" type="email" placeholder="輸入你的 Email" required>
+                    <button type="submit" class="kirimemail-btn-submit">訂閱</button>
                 </form>
             </div>
         </section>
@@ -216,6 +216,7 @@
         </div>
     </footer>
 
+    <script defer src="https://static.kirim.email/assets/app/js/frontend/ajax_form.js"></script>
 </body>
 
 </html>
