@@ -264,6 +264,7 @@ a {
     justify-content: center;
     gap: 48px;
     width: 100%;
+    max-width: 800px; /* Forces 2x2 grid layout on desktop */
     flex-wrap: wrap;
 }
 
