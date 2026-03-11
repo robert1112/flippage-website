@@ -216,7 +216,35 @@
         </div>
     </footer>
 
-    <script defer src="https://static.kirim.email/assets/app/js/frontend/ajax_form.js"></script>
+    <script>
+        document.getElementById('keform').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page redirect
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            
+            // UI Feedback
+            submitBtn.innerText = '處理中...';
+            submitBtn.disabled = true;
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                mode: 'no-cors' // Prevent CORS errors from cross-origin form POST
+            }).then(() => {
+                alert('感謝您的訂閱！我們已經將您加入名單。');
+                form.reset();
+            }).catch(error => {
+                console.error('Error!', error.message);
+                alert('抱歉，處理過程中發生錯誤，請稍後再試。');
+            }).finally(() => {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
 </body>
 
 </html>
