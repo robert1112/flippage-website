@@ -234,7 +234,7 @@
                 body: formData,
                 mode: 'no-cors' // Prevent CORS errors from cross-origin form POST
             }).then(() => {
-                alert('感謝您的訂閱！我們已經將您加入名單。');
+                alert('感謝您的填寫！請至您的信箱（含垃圾信件匣）點擊確認連結，才算正式完成訂閱喔！');
                 form.reset();
             }).catch(error => {
                 console.error('Error!', error.message);
